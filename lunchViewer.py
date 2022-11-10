@@ -6,8 +6,7 @@ import requests
 def lambda_handler(event, context):    
     host = 'https://api.mealviewer.com/api/v4/school'
     school = 'HeritageES'
-    tomorrow = arrow.utcnow().to('US/Eastern').shift(days=3)
-    tomorrow = arrow.get('2018-01-18')
+    tomorrow = arrow.utcnow().to('US/Eastern').shift(days=1)
 
     if tomorrow.weekday() in (5, 6):
         output = "There's no school tomorrow, silly! Are you pulling my leg?"
